@@ -1,17 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM  from 'react-dom'
+import Close from './close'
+import './index.css'
+
+
+import Footer from './footer'
+
+import Navbar from './navbar'
+import New from './newtab'
+import Refresh from './refresh'
+import Change from './change'
+
+
+const App = () => {
+    return (
+        <>
+        <div>
+            <Navbar />
+            <div id="btns">
+                <div id="btndiv"><button onClick={Close} id="btnn">Close this Tab</button></div>
+                <div id="btndiv"><button onClick={New} id="btnn">new tab</button></div>
+                <div id="btndiv"><button onClick={Refresh} id="btnn">refresh the page</button></div>
+            </div>
+            
+            <div id="changes">
+                <Change />
+            </div>
+            
+            
+            
+            <Footer />
+        </div>
+       
+        </>
+    )
+
+}
+   
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <App></App>,
+    document.getElementById('root')
+)
